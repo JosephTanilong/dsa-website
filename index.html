@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Video Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <span class="logo-mark">◈</span>
+            <div class="logo-text">DSA <em>Library</em></div>
+        </div>
+
+        <div class="sidebar-scroll">
+        <div class="sidebar-top-actions">
+            <button class="add-video-btn" id="addVideoBtn">+ Add Video</button>
+            <div class="sidebar-search">
+                <input type="text" id="searchBox" placeholder="Search videos...">
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <!-- LINEAR -->
+            <p class="nav-label">Linear</p>
+            <button class="filter-btn active" data-category="array">
+                <span class="btn-dot"></span><span class="btn-name">Array</span>
+                <span class="btn-count" id="count-array">0</span>
+            </button>
+            <button class="filter-btn" data-category="list">
+                <span class="btn-dot"></span><span class="btn-name">List</span>
+                <span class="btn-count" id="count-list">0</span>
+            </button>
+            <button class="filter-btn" data-category="matrix">
+                <span class="btn-dot"></span><span class="btn-name">Matrix</span>
+                <span class="btn-count" id="count-matrix">0</span>
+            </button>
+            <button class="filter-btn" data-category="stacks">
+                <span class="btn-dot"></span><span class="btn-name">Stacks</span>
+                <span class="btn-count" id="count-stacks">0</span>
+            </button>
+            <button class="filter-btn" data-category="queue">
+                <span class="btn-dot"></span><span class="btn-name">Queue</span>
+                <span class="btn-count" id="count-queue">0</span>
+            </button>
+            <button class="filter-btn" data-category="tuples">
+                <span class="btn-dot"></span><span class="btn-name">Tuples</span>
+                <span class="btn-count" id="count-tuples">0</span>
+            </button>
+
+            <!-- NON-LINEAR -->
+            <p class="nav-label nav-label-gap">Non-Linear</p>
+            <button class="filter-btn" data-category="tree">
+                <span class="btn-dot"></span><span class="btn-name">Tree</span>
+                <span class="btn-count" id="count-tree">0</span>
+            </button>
+            <button class="filter-btn" data-category="graph">
+                <span class="btn-dot"></span><span class="btn-name">Graph</span>
+                <span class="btn-count" id="count-graph">0</span>
+            </button>
+            <button class="filter-btn" data-category="heaps">
+                <span class="btn-dot"></span><span class="btn-name">Heaps</span>
+                <span class="btn-count" id="count-heaps">0</span>
+            </button>
+            <button class="filter-btn" data-category="hashmap">
+                <span class="btn-dot"></span><span class="btn-name">Hash Map</span>
+                <span class="btn-count" id="count-hashmap">0</span>
+            </button>
+            <button class="filter-btn" data-category="dictionary">
+                <span class="btn-dot"></span><span class="btn-name">Dictionary</span>
+                <span class="btn-count" id="count-dictionary">0</span>
+            </button>
+            <button class="filter-btn" data-category="maps">
+                <span class="btn-dot"></span><span class="btn-name">Maps</span>
+                <span class="btn-count" id="count-maps">0</span>
+            </button>
+
+            <!-- ALGORITHM -->
+            <p class="nav-label nav-label-gap">Algorithm</p>
+            <button class="filter-btn" data-category="sort">
+                <span class="btn-dot"></span><span class="btn-name">Sort</span>
+                <span class="btn-count" id="count-sort">0</span>
+            </button>
+            <button class="filter-btn" data-category="search">
+                <span class="btn-dot"></span><span class="btn-name">Search</span>
+                <span class="btn-count" id="count-search">0</span>
+            </button>
+
+        </nav>
+        </div><!-- end sidebar-scroll -->
+    </aside>
+
+    <main class="main">
+        <header class="main-header">
+            <div>
+                <p class="header-eyebrow">Data Structures & Algorithms</p>
+                <h1 class="header-title" id="headerTitle">Array</h1>
+            </div>
+            <span class="header-count" id="headerCount">0 lessons</span>
+        </header>
+
+        <div class="video-grid" id="videoGrid"></div>
+
+        <div class="no-results" id="noResults" style="display:none;">
+            <p class="no-glyph">empty</p>
+            <p>Nothing here yet.</p>
+            <small>Use "Add Video" to get started.</small>
+        </div>
+    </main>
+
+    <!-- Playback Modal -->
+    <div class="modal" id="videoModal">
+        <div class="modal-backdrop" id="videoBackdrop"></div>
+        <div class="modal-panel">
+            <button class="modal-close" id="closeModal">X</button>
+            <div class="modal-video-wrap" id="modalVideo"></div>
+            <div class="modal-body">
+                <span class="modal-tag" id="modalTag"></span>
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <p class="modal-desc" id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add / Edit Modal -->
+    <div class="modal" id="addVideoModal">
+        <div class="modal-backdrop" id="addBackdrop"></div>
+        <div class="modal-panel modal-form-panel">
+            <button class="modal-close" id="closeAddModal">X</button>
+            <div class="modal-body">
+                <h2 class="modal-title" id="formHeading">New Video</h2>
+                <form id="addVideoForm" autocomplete="off">
+                    <div class="form-group">
+                        <label for="videoTitle">Title</label>
+                        <input type="text" id="videoTitle" required placeholder="e.g. Introduction to Binary Trees">
+                    </div>
+                    <div class="form-group">
+                        <label for="videoCategory">Category</label>
+                        <select id="videoCategory" required>
+                            <optgroup label="Linear">
+                                <option value="array">Array</option>
+                                <option value="list">List</option>
+                                <option value="matrix">Matrix</option>
+                                <option value="stacks">Stacks</option>
+                                <option value="queue">Queue</option>
+                                <option value="tuples">Tuples</option>
+                            </optgroup>
+                            <optgroup label="Non-Linear">
+                                <option value="tree">Tree</option>
+                                <option value="graph">Graph</option>
+                                <option value="heaps">Heaps</option>
+                                <option value="hashmap">Hash Map</option>
+                                <option value="dictionary">Dictionary</option>
+                                <option value="maps">Maps</option>
+                            </optgroup>
+                            <optgroup label="Algorithm">
+                                <option value="sort">Sort</option>
+                                <option value="search">Search</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="videoUrl">Video URL</label>
+                        <input type="text" id="videoUrl" required placeholder="YouTube link or videos/file.mp4">
+                    </div>
+                    <div class="form-group">
+                        <label for="videoDescription">Description</label>
+                        <textarea id="videoDescription" required placeholder="What does this video cover?"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Save Video</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
