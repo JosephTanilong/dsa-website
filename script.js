@@ -16,45 +16,53 @@ const defaultVideos = [
     { id: 6,  title: 'Matrix',            category: 'matrix',     description: 'Introduction to 2D arrays (matrices): row/column indexing and common traversal patterns.', videoUrl: 'videos/Matrix.gif' },
 
     // ── STACKS ─────────────────────────────────────────
-    { id: 7,  title: 'Stack Push',        category: 'stacks',     description: 'Pushing an element onto the top of a stack and how the LIFO principle applies.', videoUrl: 'videos/stacks-push.gif' },
-    { id: 8,  title: 'Stack Pop',         category: 'stacks',     description: 'Removing and returning the top element of a stack.', videoUrl: 'videos/stacks-pop.gif' },
-    { id: 9,  title: 'Stack Peek',        category: 'stacks',     description: 'Reading the top element of a stack without removing it.', videoUrl: 'videos/stacks-peek.gif' },
-    { id: 10, title: 'Stack Overflow',    category: 'stacks',     description: 'What happens when you push onto a full stack — causes and prevention.', videoUrl: 'videos/stacks-overflow.gif' },
-    { id: 11, title: 'Stack isEmpty',     category: 'stacks',     description: 'Checking whether a stack contains any elements before popping.', videoUrl: 'videos/stacks-isempty.gif' },
+    { id: 7,  title: 'Stack Push',         category: 'stacks',    description: 'Pushing an element onto the top of a stack and how the LIFO principle applies.', videoUrl: 'videos/stacks-push.gif' },
+    { id: 8,  title: 'Stack Pop',          category: 'stacks',    description: 'Removing and returning the top element of a stack.', videoUrl: 'videos/stacks-pop.gif' },
+    { id: 9,  title: 'Stack Peek',         category: 'stacks',    description: 'Reading the top element of a stack without removing it.', videoUrl: 'videos/stacks-peek.gif' },
+    { id: 10, title: 'Stack Overflow',     category: 'stacks',    description: 'What happens when you push onto a full stack — causes and prevention.', videoUrl: 'videos/stacks-overflow.gif' },
+    { id: 11, title: 'Stack isEmpty',      category: 'stacks',    description: 'Checking whether a stack contains any elements before popping.', videoUrl: 'videos/stacks-isempty.gif' },
+    { id: 12, title: 'Stack Sizes',        category: 'stacks',    description: 'Visual demonstration of how stack size changes as elements are pushed and popped.', videoUrl: 'videos/stacks-sizes.gif' },
+    { id: 13, title: 'Stack Top & Bottom', category: 'stacks',    description: 'Understanding the top and bottom of a stack and how LIFO ordering works visually.', videoUrl: 'videos/stacks-top-bottom.gif' },
 
     // ── QUEUE ──────────────────────────────────────────
-    { id: 12, title: 'Queue Enqueue',     category: 'queue',      description: 'Adding an element to the back of a queue following the FIFO principle.', videoUrl: 'videos/queue-enqueue.gif' },
-    { id: 13, title: 'Queue Dequeue',     category: 'queue',      description: 'Removing an element from the front of a queue.', videoUrl: 'videos/queue-dequeue.gif' },
+    { id: 14, title: 'Queue Enqueue',     category: 'queue',      description: 'Adding an element to the back of a queue following the FIFO principle.', videoUrl: 'videos/queue-enqueue.gif' },
+    { id: 15, title: 'Queue Dequeue',     category: 'queue',      description: 'Removing an element from the front of a queue.', videoUrl: 'videos/queue-dequeue.gif' },
+
+    // ── TUPLES ─────────────────────────────────────────
+    { id: 16, title: 'Tuples',            category: 'tuples',     description: 'Introduction to tuples: immutable ordered collections and how they differ from lists and arrays.', videoUrl: 'videos/tuples.mp4' },
+
+    // ── TREE ───────────────────────────────────────────
+    { id: 17, title: 'Tree',              category: 'tree',       description: 'Introduction to tree data structures: nodes, edges, root, leaves, and common traversal methods.', videoUrl: 'videos/Tree.gif' },
 
     // ── GRAPH ──────────────────────────────────────────
-    { id: 14, title: 'Graph',             category: 'graph',      description: 'Overview of graph data structures: vertices, edges, directed vs undirected, and adjacency representations.', videoUrl: 'videos/Graph.gif' },
+    { id: 18, title: 'Graph',             category: 'graph',      description: 'Overview of graph data structures: vertices, edges, directed vs undirected, and adjacency representations.', videoUrl: 'videos/Graph.gif' },
 
     // ── HEAPS ──────────────────────────────────────────
-    { id: 15, title: 'Max-Heap Insertion', category: 'heaps',     description: 'Inserting a new element into a max-heap and restoring the heap property by bubbling up.', videoUrl: 'videos/heaps-max-insertion.mp4' },
-    { id: 16, title: 'Max-Heap Deletion',  category: 'heaps',     description: 'Removing the maximum element from a max-heap and re-heapifying by sifting down.', videoUrl: 'videos/heaps-max-deletion.mp4' },
-    { id: 17, title: 'Min-Heap Insertion', category: 'heaps',     description: 'Inserting into a min-heap and bubbling up to maintain the min-heap invariant.', videoUrl: 'videos/heaps-min-insertion.mp4' },
-    { id: 18, title: 'Min-Heap Deletion',  category: 'heaps',     description: 'Extracting the minimum element from a min-heap and restoring the heap property.', videoUrl: 'videos/heaps-min-deletion.mp4' },
+    { id: 19, title: 'Max-Heap Insertion', category: 'heaps',     description: 'Inserting a new element into a max-heap and restoring the heap property by bubbling up.', videoUrl: 'videos/heaps-max-insertion.mp4' },
+    { id: 20, title: 'Max-Heap Deletion',  category: 'heaps',     description: 'Removing the maximum element from a max-heap and re-heapifying by sifting down.', videoUrl: 'videos/heaps-max-deletion.mp4' },
+    { id: 21, title: 'Min-Heap Insertion', category: 'heaps',     description: 'Inserting into a min-heap and bubbling up to maintain the min-heap invariant.', videoUrl: 'videos/heaps-min-insertion.mp4' },
+    { id: 22, title: 'Min-Heap Deletion',  category: 'heaps',     description: 'Extracting the minimum element from a min-heap and restoring the heap property.', videoUrl: 'videos/heaps-min-deletion.mp4' },
 
     // ── HASH MAP ───────────────────────────────────────
-    { id: 19, title: 'Hash Map',           category: 'hashmap',   description: 'How hash maps store key-value pairs using a hash function to compute bucket indices.', videoUrl: 'videos/hashmap.gif' },
+    { id: 23, title: 'Hash Map',           category: 'hashmap',   description: 'How hash maps store key-value pairs using a hash function to compute bucket indices.', videoUrl: 'videos/hashmap.gif' },
 
-    // ── DICTIONARY ────────────────────────────────────
-    { id: 20, title: 'Dictionary Insertion', category: 'dictionary', description: 'Adding a new key-value pair to a dictionary and handling collisions.', videoUrl: 'videos/dictionary-insertion.gif' },
-    { id: 21, title: 'Dictionary Deletion',  category: 'dictionary', description: 'Removing a key-value pair from a dictionary by key.', videoUrl: 'videos/dictionary-deletion.gif' },
-    { id: 22, title: 'Dictionary Lookup',    category: 'dictionary', description: 'Retrieving a value from a dictionary using its key in average O(1) time.', videoUrl: 'videos/dictionary-lookup.gif' },
+    // ── DICTIONARY ─────────────────────────────────────
+    { id: 24, title: 'Dictionary Insertion', category: 'dictionary', description: 'Adding a new key-value pair to a dictionary and handling collisions.', videoUrl: 'videos/dictionary-insertion.gif' },
+    { id: 25, title: 'Dictionary Deletion',  category: 'dictionary', description: 'Removing a key-value pair from a dictionary by key.', videoUrl: 'videos/dictionary-deletion.gif' },
+    { id: 26, title: 'Dictionary Lookup',    category: 'dictionary', description: 'Retrieving a value from a dictionary using its key in average O(1) time.', videoUrl: 'videos/dictionary-lookup.gif' },
 
     // ── MAPS ───────────────────────────────────────────
-    { id: 23, title: 'Maps Put',    category: 'maps',             description: 'Inserting or updating a key-value mapping using the put operation.', videoUrl: 'videos/maps-put.mp4' },
-    { id: 24, title: 'Maps Remove', category: 'maps',             description: 'Deleting a key-value pair from a map by key.', videoUrl: 'videos/maps-remove.mp4' },
+    { id: 27, title: 'Maps Put',    category: 'maps',             description: 'Inserting or updating a key-value mapping using the put operation.', videoUrl: 'videos/maps-put.mp4' },
+    { id: 28, title: 'Maps Remove', category: 'maps',             description: 'Deleting a key-value pair from a map by key.', videoUrl: 'videos/maps-remove.mp4' },
 
     // ── SORT ───────────────────────────────────────────
-    { id: 25, title: 'Bubble Sort',    category: 'sort',          description: 'Repeatedly swapping adjacent elements that are out of order until the list is sorted.', videoUrl: 'videos/sort-bubble.mp4' },
-    { id: 26, title: 'Selection Sort', category: 'sort',          description: 'Finding the minimum element and placing it at the correct position on each pass.', videoUrl: 'videos/sort-selection.mp4' },
-    { id: 27, title: 'Insertion Sort', category: 'sort',          description: 'Building the sorted array one element at a time by inserting into the correct position.', videoUrl: 'videos/sort-insertion.mp4' },
+    { id: 29, title: 'Bubble Sort',    category: 'sort',          description: 'Repeatedly swapping adjacent elements that are out of order until the list is sorted.', videoUrl: 'videos/sort-bubble.mp4' },
+    { id: 30, title: 'Selection Sort', category: 'sort',          description: 'Finding the minimum element and placing it at the correct position on each pass.', videoUrl: 'videos/sort-selection.mp4' },
+    { id: 31, title: 'Insertion Sort', category: 'sort',          description: 'Building the sorted array one element at a time by inserting into the correct position.', videoUrl: 'videos/sort-insertion.mp4' },
 
     // ── SEARCH ─────────────────────────────────────────
-    { id: 28, title: 'Linear Search', category: 'search',         description: 'Scanning every element one by one until the target is found — O(n) worst case.', videoUrl: 'videos/searc-linear.gif' },
-    { id: 29, title: 'Binary Search', category: 'search',         description: 'Efficiently finding a target in a sorted array by halving the search space each step — O(log n).', videoUrl: 'videos/search-binary.gif' },
+    { id: 32, title: 'Linear Search', category: 'search',         description: 'Scanning every element one by one until the target is found — O(n) worst case.', videoUrl: 'videos/searc-linear.gif' },
+    { id: 33, title: 'Binary Search', category: 'search',         description: 'Efficiently finding a target in a sorted array by halving the search space each step — O(log n).', videoUrl: 'videos/search-binary.gif' },
 ];
 
 // Seed localStorage on first visit (or if it's empty)
@@ -85,7 +93,6 @@ let searchTerm     = '';
 let editingVideoId = null;
 let searchDebounce = null;
 
-// Cache for generated poster frames (videoUrl -> base64 dataURL)
 const posterCache = {};
 
 const categoryLabels = {
@@ -106,25 +113,15 @@ const categoryLabels = {
     search:     'Search'
 };
 
-// ===============================
-// CAPTURE FIRST FRAME FROM VIDEO
-// Returns a Promise that resolves to a base64 image dataURL
-// ===============================
 function captureVideoFrame(url) {
     return new Promise(function(resolve) {
-        // Return cached poster if already generated
-        if (posterCache[url]) {
-            resolve(posterCache[url]);
-            return;
-        }
-
+        if (posterCache[url]) { resolve(posterCache[url]); return; }
         var video = document.createElement('video');
         video.src = url;
         video.muted = true;
         video.preload = 'metadata';
         video.crossOrigin = 'anonymous';
-        video.currentTime = 0.5; // seek to 0.5s for a better frame
-
+        video.currentTime = 0.5;
         video.addEventListener('seeked', function() {
             try {
                 var canvas = document.createElement('canvas');
@@ -135,109 +132,62 @@ function captureVideoFrame(url) {
                 var dataURL = canvas.toDataURL('image/jpeg', 0.7);
                 posterCache[url] = dataURL;
                 resolve(dataURL);
-            } catch(e) {
-                resolve(null); // fallback if cross-origin blocks canvas
-            }
+            } catch(e) { resolve(null); }
             video.remove();
         }, { once: true });
-
-        video.addEventListener('error', function() {
-            resolve(null);
-            video.remove();
-        }, { once: true });
-
-        // Some browsers need load() called
+        video.addEventListener('error', function() { resolve(null); video.remove(); }, { once: true });
         video.load();
     });
 }
 
-// ===============================
-// CAPTURE FIRST FRAME FROM GIF
-// GIFs are images — just use the src directly as the thumbnail
-// ===============================
 function getThumbnailHTML(video) {
-    // YouTube — static thumbnail from YouTube CDN
     if (video.videoUrl && (video.videoUrl.includes('youtube.com') || video.videoUrl.includes('youtu.be'))) {
-        var match = video.videoUrl.match(
-            /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/
-        );
-        if (match) {
-            return '<img src="https://img.youtube.com/vi/' + match[1] + '/hqdefault.jpg" class="thumb-media" loading="lazy" alt="' + video.title + '">';
-        }
+        var match = video.videoUrl.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/);
+        if (match) return '<img src="https://img.youtube.com/vi/' + match[1] + '/hqdefault.jpg" class="thumb-media" loading="lazy" alt="' + video.title + '">';
     }
-
-    // GIF — show first frame by loading it as an <img> (static until played in modal)
     if (video.videoUrl && video.videoUrl.endsWith('.gif')) {
         return '<img src="' + video.videoUrl + '" class="thumb-media" alt="' + video.title + '">';
     }
-
-    // Local video — return placeholder first, then async replace with real poster frame
-    if (video.videoUrl && (
-        video.videoUrl.endsWith('.mp4') ||
-        video.videoUrl.endsWith('.webm') ||
-        video.videoUrl.endsWith('.ogg')
-    )) {
-        // If we already have a cached poster, use it immediately
-        if (posterCache[video.videoUrl]) {
-            return '<img src="' + posterCache[video.videoUrl] + '" class="thumb-media" alt="' + video.title + '">';
-        }
-        // Otherwise return placeholder with a data-id so we can swap it after capture
+    if (video.videoUrl && (video.videoUrl.endsWith('.mp4') || video.videoUrl.endsWith('.webm') || video.videoUrl.endsWith('.ogg'))) {
+        if (posterCache[video.videoUrl]) return '<img src="' + posterCache[video.videoUrl] + '" class="thumb-media" alt="' + video.title + '">';
         return '<div class="thumb-placeholder" data-poster-for="' + video.id + '"><span class="thumb-type-label">VIDEO</span></div>';
     }
-
     return '<div class="thumb-placeholder"><span class="thumb-type-label">-</span></div>';
 }
 
-// ===============================
-// GENERATE POSTER FRAMES ASYNC
-// After render, find all placeholder thumbnails and swap them with real frames
-// ===============================
 function generatePosters() {
     var placeholders = document.querySelectorAll('[data-poster-for]');
     placeholders.forEach(function(placeholder) {
         var videoId = parseInt(placeholder.getAttribute('data-poster-for'));
         var video   = videos.find(function(v) { return v.id === videoId; });
         if (!video || !video.videoUrl) return;
-
         captureVideoFrame(video.videoUrl).then(function(dataURL) {
-            if (!dataURL) return; // stay as placeholder if capture failed
-            // Find the placeholder again (DOM may have changed)
+            if (!dataURL) return;
             var el = document.querySelector('[data-poster-for="' + videoId + '"]');
             if (!el) return;
             var img = document.createElement('img');
-            img.src       = dataURL;
-            img.className = 'thumb-media';
-            img.alt       = video.title;
+            img.src = dataURL; img.className = 'thumb-media'; img.alt = video.title;
             el.replaceWith(img);
         });
     });
 }
 
-// ===============================
-// UPDATE SIDEBAR COUNTS
-// ===============================
 function updateCounts() {
     var counts = {};
     Object.keys(categoryLabels).forEach(function(k) { counts[k] = 0; });
     videos.forEach(function(v) { if (counts[v.category] !== undefined) counts[v.category]++; });
-
     Object.keys(counts).forEach(function(cat) {
         var el = document.getElementById('count-' + cat);
         if (el) el.textContent = counts[cat];
     });
 }
 
-// ===============================
-// RENDER VIDEOS
-// ===============================
 function renderVideos() {
     updateCounts();
-
     var filteredVideos = videos.filter(function(video) {
         var matchesCategory = currentFilter === 'all' || video.category === currentFilter;
-        var matchesSearch =
-            video.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            video.description.toLowerCase().includes(searchTerm.toLowerCase());
+        var matchesSearch = video.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                            video.description.toLowerCase().includes(searchTerm.toLowerCase());
         return matchesCategory && matchesSearch;
     });
 
@@ -257,14 +207,12 @@ function renderVideos() {
     videoGrid.innerHTML = filteredVideos.map(function(video) {
         var catLabel  = video.categoryLabel || categoryLabels[video.category] || video.category;
         var thumbHTML = getThumbnailHTML(video);
-
         return '<div class="video-card" data-id="' + video.id + '">' +
             '<div class="card-actions">' +
                 '<button class="edit-btn"   data-id="' + video.id + '" title="Edit">Edit</button>' +
                 '<button class="delete-btn" data-id="' + video.id + '" title="Delete">Del</button>' +
             '</div>' +
-            '<div class="video-thumbnail">' +
-                thumbHTML +
+            '<div class="video-thumbnail">' + thumbHTML +
                 '<div class="play-overlay"><div class="play-circle">&#9654;</div></div>' +
             '</div>' +
             '<div class="video-info">' +
@@ -275,14 +223,11 @@ function renderVideos() {
         '</div>';
     }).join('');
 
-    // Generate poster frames for local videos asynchronously
     generatePosters();
 
-    // Single delegated click handler on the grid
     videoGrid.onclick = function(e) {
         var card = e.target.closest('.video-card');
         if (!card) return;
-
         if (e.target.closest('.edit-btn')) {
             var videoId = parseInt(e.target.closest('.edit-btn').dataset.id);
             var video   = videos.find(function(v) { return v.id === videoId; });
@@ -296,65 +241,41 @@ function renderVideos() {
             addVideoModal.classList.add('active');
             return;
         }
-
         if (e.target.closest('.delete-btn')) {
             deleteVideo(parseInt(e.target.closest('.delete-btn').dataset.id));
             return;
         }
-
         openVideoModal(parseInt(card.dataset.id));
     };
 }
 
-// ===============================
-// OPEN VIDEO MODAL — plays here only
-// ===============================
 function openVideoModal(videoId) {
     var video = videos.find(function(v) { return v.id === videoId; });
     if (!video) return;
-
     document.getElementById('modalTitle').textContent       = video.title;
     document.getElementById('modalDescription').textContent = video.description;
     document.getElementById('modalTag').textContent         = video.categoryLabel || categoryLabels[video.category] || video.category;
-
     var modalVideo = document.getElementById('modalVideo');
-
     if (!video.videoUrl) {
         modalVideo.innerHTML = '<p style="color:#999;padding:20px;">No video URL provided.</p>';
     } else if (video.videoUrl.endsWith('.gif')) {
-        // GIF plays fully in modal
         modalVideo.innerHTML = '<img src="' + video.videoUrl + '" alt="' + video.title + '" style="width:100%;height:100%;object-fit:contain;">';
-    } else if (
-        video.videoUrl.endsWith('.mp4') ||
-        video.videoUrl.endsWith('.webm') ||
-        video.videoUrl.endsWith('.ogg')
-    ) {
+    } else if (video.videoUrl.endsWith('.mp4') || video.videoUrl.endsWith('.webm') || video.videoUrl.endsWith('.ogg')) {
         modalVideo.innerHTML = '<video controls autoplay style="width:100%;height:100%;"><source src="' + video.videoUrl + '" type="video/mp4"></video>';
     } else if (video.videoUrl.includes('youtube.com') || video.videoUrl.includes('youtu.be')) {
-        var match = video.videoUrl.match(
-            /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/
-        );
-        if (match) {
-            modalVideo.innerHTML = '<iframe src="https://www.youtube.com/embed/' + match[1] + '?autoplay=1" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>';
-        }
+        var match = video.videoUrl.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/);
+        if (match) modalVideo.innerHTML = '<iframe src="https://www.youtube.com/embed/' + match[1] + '?autoplay=1" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>';
     } else {
         modalVideo.innerHTML = '<iframe src="' + video.videoUrl + '" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>';
     }
-
     videoModal.classList.add('active');
 }
 
-// ===============================
-// CLOSE VIDEO MODAL — stop playback
-// ===============================
 function closeVideoModal() {
     videoModal.classList.remove('active');
     document.getElementById('modalVideo').innerHTML = '';
 }
 
-// ===============================
-// DELETE VIDEO
-// ===============================
 function deleteVideo(videoId) {
     if (!confirm('Are you sure you want to delete this video?')) return;
     videos = videos.filter(function(v) { return v.id !== videoId; });
@@ -362,9 +283,6 @@ function deleteVideo(videoId) {
     renderVideos();
 }
 
-// ===============================
-// CLOSE ADD FORM
-// ===============================
 function closeAddForm() {
     addVideoModal.classList.remove('active');
     editingVideoId = null;
@@ -372,9 +290,6 @@ function closeAddForm() {
     formHeading.textContent = 'New Video';
 }
 
-// ===============================
-// EVENT LISTENERS
-// ===============================
 closeModal.addEventListener('click',    closeVideoModal);
 videoBackdrop.addEventListener('click', closeVideoModal);
 closeAddModal.addEventListener('click', closeAddForm);
@@ -428,7 +343,4 @@ addVideoForm.addEventListener('submit', function(e) {
     closeAddForm();
 });
 
-// ===============================
-// INIT
-// ===============================
 renderVideos();
