@@ -1,4 +1,68 @@
-let videos = JSON.parse(localStorage.getItem('videos')) || [];
+// ===============================
+// DEFAULT VIDEO LIBRARY (hardcoded seed)
+// These load for every visitor, not just you.
+// ===============================
+const defaultVideos = [
+    // ── ARRAY ──────────────────────────────────────────
+    { id: 1,  title: 'Array Insertion',   category: 'array',      description: 'How elements are inserted into an array, including shifting existing elements to make room.', videoUrl: 'videos/array-insertion.gif' },
+    { id: 2,  title: 'Array Deletion',    category: 'array',      description: 'How elements are removed from an array and the array is compacted after deletion.', videoUrl: 'videos/array-deletion.gif' },
+    { id: 3,  title: 'Array Transversal', category: 'array',      description: 'Visiting every element in an array from start to finish using index-based iteration.', videoUrl: 'videos/array-transversal.gif' },
+
+    // ── LIST ───────────────────────────────────────────
+    { id: 4,  title: 'Linked List Append',  category: 'list',     description: 'Adding a new node to the end of a singly linked list by updating the tail pointer.', videoUrl: 'videos/linkedlist-append.gif' },
+    { id: 5,  title: 'Linked List Prepend', category: 'list',     description: 'Inserting a new node at the head of a singly linked list in O(1) time.', videoUrl: 'videos/linkedlist-prepend.gif' },
+
+    // ── MATRIX ─────────────────────────────────────────
+    { id: 6,  title: 'Matrix',            category: 'matrix',     description: 'Introduction to 2D arrays (matrices): row/column indexing and common traversal patterns.', videoUrl: 'videos/Matrix.gif' },
+
+    // ── STACKS ─────────────────────────────────────────
+    { id: 7,  title: 'Stack Push',        category: 'stacks',     description: 'Pushing an element onto the top of a stack and how the LIFO principle applies.', videoUrl: 'videos/stacks-push.gif' },
+    { id: 8,  title: 'Stack Pop',         category: 'stacks',     description: 'Removing and returning the top element of a stack.', videoUrl: 'videos/stacks-pop.gif' },
+    { id: 9,  title: 'Stack Peek',        category: 'stacks',     description: 'Reading the top element of a stack without removing it.', videoUrl: 'videos/stacks-peek.gif' },
+    { id: 10, title: 'Stack Overflow',    category: 'stacks',     description: 'What happens when you push onto a full stack — causes and prevention.', videoUrl: 'videos/stacks-overflow.gif' },
+    { id: 11, title: 'Stack isEmpty',     category: 'stacks',     description: 'Checking whether a stack contains any elements before popping.', videoUrl: 'videos/stacks-isempty.gif' },
+
+    // ── QUEUE ──────────────────────────────────────────
+    { id: 12, title: 'Queue Enqueue',     category: 'queue',      description: 'Adding an element to the back of a queue following the FIFO principle.', videoUrl: 'videos/queue-enqueue.gif' },
+    { id: 13, title: 'Queue Dequeue',     category: 'queue',      description: 'Removing an element from the front of a queue.', videoUrl: 'videos/queue-dequeue.gif' },
+
+    // ── GRAPH ──────────────────────────────────────────
+    { id: 14, title: 'Graph',             category: 'graph',      description: 'Overview of graph data structures: vertices, edges, directed vs undirected, and adjacency representations.', videoUrl: 'videos/Graph.gif' },
+
+    // ── HEAPS ──────────────────────────────────────────
+    { id: 15, title: 'Max-Heap Insertion', category: 'heaps',     description: 'Inserting a new element into a max-heap and restoring the heap property by bubbling up.', videoUrl: 'videos/heaps-max-insertion.mp4' },
+    { id: 16, title: 'Max-Heap Deletion',  category: 'heaps',     description: 'Removing the maximum element from a max-heap and re-heapifying by sifting down.', videoUrl: 'videos/heaps-max-deletion.mp4' },
+    { id: 17, title: 'Min-Heap Insertion', category: 'heaps',     description: 'Inserting into a min-heap and bubbling up to maintain the min-heap invariant.', videoUrl: 'videos/heaps-min-insertion.mp4' },
+    { id: 18, title: 'Min-Heap Deletion',  category: 'heaps',     description: 'Extracting the minimum element from a min-heap and restoring the heap property.', videoUrl: 'videos/heaps-min-deletion.mp4' },
+
+    // ── HASH MAP ───────────────────────────────────────
+    { id: 19, title: 'Hash Map',           category: 'hashmap',   description: 'How hash maps store key-value pairs using a hash function to compute bucket indices.', videoUrl: 'videos/hashmap.gif' },
+
+    // ── DICTIONARY ────────────────────────────────────
+    { id: 20, title: 'Dictionary Insertion', category: 'dictionary', description: 'Adding a new key-value pair to a dictionary and handling collisions.', videoUrl: 'videos/dictionary-insertion.gif' },
+    { id: 21, title: 'Dictionary Deletion',  category: 'dictionary', description: 'Removing a key-value pair from a dictionary by key.', videoUrl: 'videos/dictionary-deletion.gif' },
+    { id: 22, title: 'Dictionary Lookup',    category: 'dictionary', description: 'Retrieving a value from a dictionary using its key in average O(1) time.', videoUrl: 'videos/dictionary-lookup.gif' },
+
+    // ── MAPS ───────────────────────────────────────────
+    { id: 23, title: 'Maps Put',    category: 'maps',             description: 'Inserting or updating a key-value mapping using the put operation.', videoUrl: 'videos/maps-put.mp4' },
+    { id: 24, title: 'Maps Remove', category: 'maps',             description: 'Deleting a key-value pair from a map by key.', videoUrl: 'videos/maps-remove.mp4' },
+
+    // ── SORT ───────────────────────────────────────────
+    { id: 25, title: 'Bubble Sort',    category: 'sort',          description: 'Repeatedly swapping adjacent elements that are out of order until the list is sorted.', videoUrl: 'videos/sort-bubble.mp4' },
+    { id: 26, title: 'Selection Sort', category: 'sort',          description: 'Finding the minimum element and placing it at the correct position on each pass.', videoUrl: 'videos/sort-selection.mp4' },
+    { id: 27, title: 'Insertion Sort', category: 'sort',          description: 'Building the sorted array one element at a time by inserting into the correct position.', videoUrl: 'videos/sort-insertion.mp4' },
+
+    // ── SEARCH ─────────────────────────────────────────
+    { id: 28, title: 'Linear Search', category: 'search',         description: 'Scanning every element one by one until the target is found — O(n) worst case.', videoUrl: 'videos/searc-linear.gif' },
+    { id: 29, title: 'Binary Search', category: 'search',         description: 'Efficiently finding a target in a sorted array by halving the search space each step — O(log n).', videoUrl: 'videos/search-binary.gif' },
+];
+
+// Seed localStorage on first visit (or if it's empty)
+if (!localStorage.getItem('videos') || JSON.parse(localStorage.getItem('videos')).length === 0) {
+    localStorage.setItem('videos', JSON.stringify(defaultVideos));
+}
+
+let videos = JSON.parse(localStorage.getItem('videos'));
 
 const videoGrid     = document.getElementById('videoGrid');
 const searchBox     = document.getElementById('searchBox');
